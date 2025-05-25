@@ -1,62 +1,66 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meriem | Data Scientist</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #ffffff;
-      color: #333333;
+      font-family: Georgia, serif;
       margin: 0;
       padding: 0;
+      background-color: #ffffff;
+      color: #222;
+      text-align: center;
     }
 
-    header {
+    .intro {
       padding: 60px 20px 20px;
     }
 
-    header h1 {
+    .intro h1 {
       font-size: 48px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-top: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      flex-wrap: wrap;
     }
 
-    section {
-      padding: 40px 20px;
+    .images img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
     footer {
-      background-color: #f4f4f4;
+      margin-top: 40px;
       padding: 20px;
+      background-color: #f2f2f2;
       font-size: 14px;
       color: #666;
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="intro">
     <h1>Hi. I'm Meriem.</h1>
-    <img src="img1.jpeg" alt="Meriem's photo" class="profile-img">
-  </header>
+    <p>I explore data to uncover stories, build models, and drive insights.</p>
+  </div>
 
-  <section>
-    <h2>Data Scientist • Analyst • AI Enthusiast</h2>
-    <p>Welcome to my personal portfolio. I use data to solve problems, build models, and tell stories.</p>
-  </section>
+  <div class="images">
+    <img src="img1.jpeg" alt="Data Science in action">
+    <img src="img2.jpeg" alt="Meriem working on a project">
+  </div>
 
   <footer>
-    &copy; 2025 Meriem Bensalloua. All rights reserved.
+    &copy; 2025 Meriem Bensalloua
   </footer>
 </body>
 </html>
