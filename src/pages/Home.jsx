@@ -3,6 +3,7 @@ import Skills from "../components/Skills";
 import Experience from "../components/Experience";
 import Certifications from "../components/Certifications";
 import ContactForm from "../components/ContactForm";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   return (

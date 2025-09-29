@@ -4,5 +4,5 @@ import "./styles/globals.css";
 
 
 
-const root = ReactDOM.crreateRoot(document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<App />);
