@@ -1,16 +1,9 @@
-import {
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-  MenubarContent,
-  MenubarItem,
-  MenubarSeparator,
-  MenubarShortcut,
-} from "@/components/ui/menubar";
+import {Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator, MenubarShortcut,} from "@/components/ui/menubar";
+import Hero from "../components/sections/Hero";
 
 export default function Home() {
   return (
-    <div className="space-y-12">
+    <div className="">
       <Menubar className="bg-gray-200 text-black p-2 rounded">
 
         {/* Home Menu */}
@@ -54,6 +47,8 @@ export default function Home() {
         </MenubarMenu>
 
       </Menubar>
+
+      <Hero />
     </div>
   );
 }
