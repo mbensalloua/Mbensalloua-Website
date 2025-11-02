@@ -1,5 +1,9 @@
 import {Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator, MenubarShortcut,} from "@/components/ui/menubar";
 import Hero from "../components/sections/Hero";
+import Portfolio from "../components/sections/Portfolio";
+import Services from "../components/sections/Services";
+import Contact from "../components/sections/Contact";
+
 
 export default function Home() {
   return (
@@ -28,8 +32,9 @@ export default function Home() {
         <MenubarMenu>
           <MenubarTrigger>Services</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>Consulting</MenubarItem>
-            <MenubarItem>Development</MenubarItem>
+            <MenubarItem>Tutoring</MenubarItem>
+            <MenubarItem>Data Science</MenubarItem>
+            <MenubarItem>Mentoring</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
 
@@ -37,18 +42,20 @@ export default function Home() {
         <MenubarMenu>
           <MenubarTrigger>About</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>Bio</MenubarItem>
-            <MenubarItem>Contact</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>
-              Print <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
+            <MenubarItem>Education</MenubarItem>
+            <MenubarItem>Skils</MenubarItem>
+            <MenubarItem>Certifications</MenubarItem>
+            <MenubarItem>Courses</MenubarItem>
+            <MenubarItem>Research</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
 
       </Menubar>
 
       <Hero />
+      <Portfolio />
+      <Services />
+      <Contact /> 
     </div>
   );
 }

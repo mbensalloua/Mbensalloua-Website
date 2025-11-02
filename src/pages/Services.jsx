@@ -10,12 +10,12 @@ import {
 
 export default function Home() {
   return (
-    <div className="space-y-12">
+    <div className="">
       <Menubar className="bg-gray-200 text-black p-2 rounded">
 
         {/* Home Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Home</MenubarTrigger>
+          <MenubarTrigger>Tutoring</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>Dashboard</MenubarItem>
             <MenubarItem>Settings</MenubarItem>
@@ -24,7 +24,7 @@ export default function Home() {
 
         {/* Portfolio Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Portfolio</MenubarTrigger>
+          <MenubarTrigger>Data Science</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>Web Apps</MenubarItem>
             <MenubarItem>Designs</MenubarItem>
@@ -33,7 +33,7 @@ export default function Home() {
 
         {/* Services Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Services</MenubarTrigger>
+          <MenubarTrigger>Mentoring</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>Consulting</MenubarItem>
             <MenubarItem>Development</MenubarItem>
