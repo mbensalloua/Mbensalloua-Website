@@ -89,7 +89,7 @@ export default function About() {
             I love traveling and discovering the beauty of the universe — it’s the same feeling I get when exploring data science. Every journey, whether across the world or through data, reveals new patterns, stories, and connections waiting to be understood.
           </p>
 
-          <h2 className="text-2xl font-bold mt-6">🎓 Education</h2>
+          <h2 className="text-2xl font-bold mt-6"> Education</h2>
           <ul className="list-disc list-inside text-gray-700">
             <li>M.S. in Discrete Mathematics and Optimization – USTHB, Algeria</li>
             <li>B.S. in Statistics – USTHB, Algeria</li>
@@ -120,7 +120,7 @@ export default function About() {
             <li>Texera Platform</li>
           </ul>
 
-          <h2 className="text-2xl font-bold mt-6">🏅 Certifications & Training</h2>
+          <h2 className="text-2xl font-bold mt-6"> Certifications & Training</h2>
           <ul className="list-disc list-inside text-gray-700">
             <li>Stanford University – Fundamentals of Data Science in Precision Medicine & Cloud Computing</li>
             <li>Cal Poly Pomona – Data Wrangling & Visualization Certificate</li>
