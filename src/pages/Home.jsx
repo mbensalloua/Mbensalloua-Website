@@ -3,6 +3,8 @@ import Hero from "../components/sections/Hero";
 import Portfolio from "../components/sections/Portfolio";
 import Services from "../components/sections/Services";
 import Contact from "../components/sections/Contact";
+import { Link } from 'react-router-dom';
+
 
 
 export default function Home() {
@@ -30,7 +32,9 @@ export default function Home() {
 
         {/* Services Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Services</MenubarTrigger>
+        <Link to="/services" >
+            <MenubarTrigger >Services</MenubarTrigger>
+          </Link>
           <MenubarContent>
             <MenubarItem>Tutoring</MenubarItem>
             <MenubarItem>Data Science</MenubarItem>

@@ -7,11 +7,19 @@ import {
   MenubarSeparator,
   MenubarShortcut,
 } from "@/components/ui/menubar";
+import { Link } from 'react-router-dom';
+
 
 export default function Home() {
   return (
     <div className="">
       <Menubar className="bg-gray-200 text-black p-2 rounded">
+
+        <MenubarMenu>
+        <Link to="/" >
+          <MenubarTrigger >Home</MenubarTrigger>
+        </Link>
+        </MenubarMenu>
 
         {/* Home Menu */}
         <MenubarMenu>
