@@ -44,7 +44,9 @@ export default function Home() {
 
         {/* About Menu */}
         <MenubarMenu>
+          <Link to="/about">
           <MenubarTrigger>About</MenubarTrigger>
+          </Link>
           <MenubarContent>
             <MenubarItem>Education</MenubarItem>
             <MenubarItem>Skils</MenubarItem>
