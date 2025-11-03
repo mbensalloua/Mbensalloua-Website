@@ -58,7 +58,9 @@ export default function About() {
         </MenubarMenu>
 
         <MenubarMenu>
+          <Link to = "/services">
           <MenubarTrigger>Services</MenubarTrigger>
+          </Link>
           <MenubarContent>
             <MenubarItem>Consulting</MenubarItem>
             <MenubarItem>Development</MenubarItem>

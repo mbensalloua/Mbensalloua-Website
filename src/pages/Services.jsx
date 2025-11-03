@@ -53,7 +53,9 @@ export default function Services() {
 
         {/* About Menu */}
         <MenubarMenu>
+          <Link to ="/about">
           <MenubarTrigger>About</MenubarTrigger>
+          </Link>
           <MenubarContent>
             <MenubarItem>Bio</MenubarItem>
             <MenubarItem>Contact</MenubarItem>
