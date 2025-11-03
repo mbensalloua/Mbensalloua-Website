@@ -15,10 +15,6 @@ export default function Home() {
         {/* Home Menu */}
         <MenubarMenu>
           <MenubarTrigger>Home</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>Dashboard</MenubarItem>
-            <MenubarItem>Settings</MenubarItem>
-          </MenubarContent>
         </MenubarMenu>
 
         {/* Portfolio Menu */}

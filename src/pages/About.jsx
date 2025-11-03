@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/menubar";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import meriem from "@/assets/meriem.png"; // Profile picture
+import meriem from "@/assets/meriem_2.png"; // Profile picture
 
 export default function About() {
   // === STEP 1: Reliable PDF download handler ===
@@ -43,17 +43,13 @@ export default function About() {
           <Link to="/">
             <MenubarTrigger>Home</MenubarTrigger>
           </Link>
-          <MenubarContent>
-            <MenubarItem>Dashboard</MenubarItem>
-            <MenubarItem>Settings</MenubarItem>
-          </MenubarContent>
         </MenubarMenu>
 
         <MenubarMenu>
           <MenubarTrigger>Portfolio</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>Web Apps</MenubarItem>
-            <MenubarItem>Designs</MenubarItem>
+            <MenubarItem>Dashboards</MenubarItem>
+            <MenubarItem>White Papers</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
 
