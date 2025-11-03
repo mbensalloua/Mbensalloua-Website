@@ -1,39 +1,80 @@
-"use client"
+"use client";
 
-import React from "react"
-import { Separator } from "@/components/ui/separator"
+import React from "react";
+import { Separator } from "@/components/ui/separator";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// Define data for the cards
-const tutoringItems = [
-  { title: "1-on-1", subtitle: "Tutoring", price: "$60" },
-  { title: "Group", subtitle: "Sessions", price: "$40" },
-  { title: "Workshops", subtitle: "Bootcamps", price: "$90" },
-]
+// Tutoring plans with detailed content
+const tutoringPlans = [
+  {
+    title: "Starter",
+    subtitle: "",
+    price: "$200",
+    features: [
+      "Introduction to Python or R for Data Science",
+      "Help with data cleaning and visualization",
+      "Support on small academic or personal projects",
+      "2 personalized 1-on-1 sessions",
+      "Feedback and resources for continued learning",
+    ],
+  },
+  {
+    title: "Pro-Package",
+    subtitle: "",
+    price: "$600",
+    features: [
+      "Hands-on guidance through end-to-end data projects",
+      "Support in machine learning algorithms (regression, classification, clustering)",
+      "Project structure, evaluation, and optimization",
+      "Up to 6 personalized sessions + progress tracking",
+      "Access to templates, datasets, and learning materials",
+    ],
+  },
+  {
+    title: "Fully Customized Plan",
+    subtitle: "",
+    price: "$1,5000",
+    features: [
+      "Deep-dive consulting or project mentorship",
+      "Custom machine learning model development and evaluation",
+      "Guidance in data storytelling and visualization for presentation",
+      "Review of code, results, and final reporting",
+      "Flexible session structure, ongoing communication, and project support",
+    ],
+  },
+];
 
-export default function Datascience() {
+export default function Tutoring() {
   return (
     <section className="py-12 bg-white">
-      <h2 className="text-3xl font-semibold text-center mb-8"> Data Science & Machine Learning </h2>
+      <h2 className="text-3xl font-semibold text-center mb-12">Data Science & Macine Learning</h2>
 
-      {/* 3x3 grid */}
-      <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto px-8">
-        {tutoringItems.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all relative"
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+        {tutoringPlans.map((plan, idx) => (
+          <Card
+            key={idx}
+            className="flex flex-col p-6 shadow-sm hover:shadow-md transition-all rounded-2xl"
             style={{
-              transform: `translateY(${(index % 3) * 50}px)`, // creates diagonal stagger
+              transform: `translateY(${idx * 40}px)`, // stagger effect
               transition: "transform 0.3s ease",
             }}
           >
-            <div className="text-xl font-bold">{item.title}</div>
-            <Separator className="my-2 w-8" />
-            <div className="text-gray-700">{item.subtitle}</div>
-            <Separator className="my-2 w-8" />
-            <div className="text-lg font-semibold text-green-600">{item.price}</div>
-          </div>
+            <CardHeader>
+              <CardTitle className="text-xl font-bold">{plan.title}</CardTitle>
+              <Separator className="my-2" />
+              <div className="text-gray-700">{plan.subtitle}</div>
+            </CardHeader>
+            <CardContent className="mt-4 flex flex-col gap-2">
+              <ul className="list-disc list-inside text-gray-700">
+                {plan.features.map((feature, fidx) => (
+                  <li key={fidx}>{feature}</li>
+                ))}
+              </ul>
+              <div className="mt-4 text-lg font-semibold text-green-600">{plan.price}</div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </section>
-  )
+  );
 }
