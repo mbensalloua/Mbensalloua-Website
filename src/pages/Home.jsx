@@ -4,6 +4,8 @@ import Portfolio from "../components/sections/Portfolio";
 import Services from "../components/sections/Services";
 import Contact from "../components/sections/Contact";
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 
 
 
@@ -33,7 +35,9 @@ export default function Home() {
           </Link>
           <MenubarContent>
             <MenubarItem>Tutoring</MenubarItem>
+            <a href="/services#datascience">
             <MenubarItem>Data Science</MenubarItem>
+            </a>
             <MenubarItem>Mentoring</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
