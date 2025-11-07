@@ -1,17 +1,21 @@
-import {Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator, MenubarShortcut,} from "@/components/ui/menubar";
+// src/pages/Home.jsx
+import {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+} from "@/components/ui/menubar";
 import Hero from "../components/sections/Hero";
 import Portfolio from "../components/sections/Portfolio";
 import Services from "../components/sections/Services";
 import Contact from "../components/sections/Contact";
-import { Link } from 'react-router-dom';
-
-
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Menubar className="bg-gray-200 text-black p-2 rounded">
-
         {/* Home Menu */}
         <MenubarMenu>
           <MenubarTrigger>Home</MenubarTrigger>
@@ -32,8 +36,8 @@ export default function Home() {
 
         {/* Services Menu */}
         <MenubarMenu>
-        <Link to="/services" >
-            <MenubarTrigger >Services</MenubarTrigger>
+          <Link to="/services">
+            <MenubarTrigger>Services</MenubarTrigger>
           </Link>
           <MenubarContent>
             <MenubarItem>Tutoring</MenubarItem>
@@ -47,33 +51,18 @@ export default function Home() {
           <MenubarTrigger>About</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>Education</MenubarItem>
-            <MenubarItem>Skils</MenubarItem>
+            <MenubarItem>Skills</MenubarItem>
             <MenubarItem>Certifications</MenubarItem>
             <MenubarItem>Courses</MenubarItem>
             <MenubarItem>Research</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-
       </Menubar>
 
       <Hero />
       <Portfolio />
       <Services />
-      <Contact /> 
-import Hero from "../components/Hero";
-import Skills from "../components/Skills";
-import Experience from "../components/Experience";
-import Certifications from "../components/Certifications";
-import ContactForm from "../components/ContactForm";
-
-export default function Home() {
-  return (
-    <div className="space-y-12">
-      <Hero />
-      <Skills />
-      <Experience />
-      <Certifications />
-      <ContactForm />
+      <Contact />
     </div>
   );
 }
