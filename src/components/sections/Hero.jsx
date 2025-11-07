@@ -4,7 +4,7 @@ import standford from '../../assets/standford.jpeg';
 
 export default function Hero() {
   return (
-    <section className="w-full bg-gray-50 ">
+    <section className="w-full bg-gray-50 " style ={{backgroundColor:''}}>
       {/* Hero Banner (centered, not full width) */}
       <div className="relative mx-auto w-full max-w-4xl h-[200px] rounded-md overflow-hidden shadow-md">
         <img

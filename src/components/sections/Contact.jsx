@@ -22,9 +22,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "emailjs-com"; // Make sure emailjs-com is installed
+import emailjs from "emailjs-com"; // ✅ make sure this is installed: npm install emailjs-com
 
-// SERVICE SELECT COMPONENT
+// ✅ Select dropdown component (unchanged layout)
 export function SelectDemo({ value, onChange }) {
   return (
     <div className="grid w-full gap-2">
@@ -47,10 +47,16 @@ export function SelectDemo({ value, onChange }) {
   );
 }
 
-// MAIN CONTACT FORM
+// ✅ Main contact form
 export default function Contact() {
   const formRef = useRef();
   const [service, setService] = useState("");
+  const [isSending, setIsSending] = useState(false);
+
+  // ✅ EmailJS credentials
+  const SERVICE_ID = "service_ao3b1gk";
+  const TEMPLATE_ID = "template_wa74tw6";
+  const PUBLIC_KEY = "WBjSZrLOlh4V_sck2";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,25 +66,23 @@ export default function Contact() {
       return;
     }
 
+    setIsSending(true);
+
     emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID", // replace with EmailJS service ID
-        "YOUR_TEMPLATE_ID", // replace with EmailJS template ID
-        formRef.current,
-        "YOUR_USER_ID" // replace with your EmailJS public key/user ID
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(
         (result) => {
-          console.log("Email sent:", result.text);
+          console.log("✅ Email sent:", result.text);
           alert("Message sent successfully!");
           formRef.current.reset();
           setService("");
         },
         (error) => {
-          console.error("Email sending error:", error.text);
+          console.error("❌ Email sending error:", error.text);
           alert("Failed to send message, please try again.");
         }
-      );
+      )
+      .finally(() => setIsSending(false));
   };
 
   return (
@@ -88,9 +92,12 @@ export default function Contact() {
           <CardTitle>Contact</CardTitle>
           <CardDescription>Enter your requested service</CardDescription>
         </CardHeader>
+
         <CardContent>
           <form ref={formRef} onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
+
+              {/* Name */}
               <div className="grid gap-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -102,6 +109,7 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Email */}
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -113,10 +121,11 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Service Dropdown */}
+              {/* Service dropdown */}
               <SelectDemo value={service} onChange={setService} />
               <input type="hidden" name="service_category" value={service} />
 
+              {/* Message */}
               <Textarea
                 name="message"
                 placeholder="Type your message here."
@@ -125,8 +134,8 @@ export default function Contact() {
             </div>
 
             <CardFooter className="flex-col gap-2 mt-4">
-              <Button type="submit" className="w-full">
-                Send
+              <Button type="submit" className="w-full" disabled={isSending}>
+                {isSending ? "Sending..." : "Send"}
               </Button>
             </CardFooter>
           </form>
