@@ -22,9 +22,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "emailjs-com"; // ✅ make sure this is installed: npm install emailjs-com
+import emailjs from "emailjs-com";
 
-// ✅ Select dropdown component (unchanged layout)
 export function SelectDemo({ value, onChange }) {
   return (
     <div className="grid w-full gap-2">
@@ -47,13 +46,11 @@ export function SelectDemo({ value, onChange }) {
   );
 }
 
-// ✅ Main contact form
 export default function Contact() {
   const formRef = useRef();
   const [service, setService] = useState("");
   const [isSending, setIsSending] = useState(false);
 
-  // ✅ EmailJS credentials
   const SERVICE_ID = "service_ao3b1gk";
   const TEMPLATE_ID = "template_wa74tw6";
   const PUBLIC_KEY = "WBjSZrLOlh4V_sck2";
@@ -72,13 +69,13 @@ export default function Contact() {
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(
         (result) => {
-          console.log("✅ Email sent:", result.text);
+          console.log("Email sent:", result.text);
           alert("Message sent successfully!");
           formRef.current.reset();
           setService("");
         },
         (error) => {
-          console.error("❌ Email sending error:", error.text);
+          console.error("Email sending error:", error.text);
           alert("Failed to send message, please try again.");
         }
       )
