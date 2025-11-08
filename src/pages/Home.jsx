@@ -10,7 +10,9 @@ import Hero from "../components/sections/Hero";
 import Portfolio from "../components/sections/Portfolio";
 import Services from "../components/sections/Services";
 import Contact from "../components/sections/Contact";
+
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Home() {
   return (
@@ -19,10 +21,6 @@ export default function Home() {
         {/* Home Menu */}
         <MenubarMenu>
           <MenubarTrigger>Home</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>Dashboard</MenubarItem>
-            <MenubarItem>Settings</MenubarItem>
-          </MenubarContent>
         </MenubarMenu>
 
         {/* Portfolio Menu */}
@@ -41,14 +39,18 @@ export default function Home() {
           </Link>
           <MenubarContent>
             <MenubarItem>Tutoring</MenubarItem>
-            <MenubarItem>Data Science</MenubarItem>
+            <HashLink to="/services#datascience">
+              <MenubarItem>Data Science</MenubarItem>
+            </HashLink>
             <MenubarItem>Mentoring</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
 
         {/* About Menu */}
         <MenubarMenu>
-          <MenubarTrigger>About</MenubarTrigger>
+          <Link to="/about">
+            <MenubarTrigger>About</MenubarTrigger>
+          </Link>
           <MenubarContent>
             <MenubarItem>Education</MenubarItem>
             <MenubarItem>Skills</MenubarItem>
