@@ -3,7 +3,9 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
+
+# Keep lockfile!
+# package-lock.json
 
 # Vite build
 dist/

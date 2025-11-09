@@ -7,43 +7,42 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 // Tutoring plans with detailed content
 const tutoringPlans = [
   {
-    title: "1-on-1 Tutoring",
-    subtitle: "1 hour session",
-    price: "$60",
+    title: "Counseling",
+    subtitle: "Two 1-hour mentoring sessions",
+    price: "$80–$100",
     features: [
-      "Personalized, one-on-one instruction",
-      "Focus on your chosen subject (Math • Python • R • Data Science)",
-      "Problem-solving and guided practice",
-      "Session summary and follow-up resources",
+      "Two 1-hour mentoring sessions",
+      "Personalized academic or career guidance (Math • Data Science • Research Support)",
+      "Q&A and action steps to help you move forward",
+      "Follow-up email summary and resources",
     ],
   },
   {
-    title: "4-hour Tutoring Package",
+    title: "Advisor",
     subtitle: "Four 1-hour sessions",
     price: "$199",
     features: [
-      "Custom learning plan for your goals",
-      "Weekly progress tracking",
-      "Q&A and feedback between sessions",
+      "Goal-setting and progress tracking",
+      "Career and learning plan development",
+      "Feedback on projects, resumes, or research ideas",
     ],
   },
   {
-    title: "Fully Customized Plan",
-    subtitle: "Flexible Scheduling",
-    price: "$200+",
+    title: "Mentor",
+    subtitle: "Twelve 1-hour mentoring sessions",
+    price: "$550–$600",
     features: [
-      "Comprehensive assessment of your needs and goals",
-      "Custom study plan and learning materials",
-      "Ongoing mentorship and progress tracking",
-      "Support in multiple areas (Math • Statistics • Python • R • Data Science)",
+      "Fully customized plan based on your goals",
+      "Guidance in academic success, data science projects, and professional pathways",
+      "Priority access to feedback, communication, and ongoing support",
     ],
   },
 ];
 
 export default function Tutoring() {
   return (
-    <section id="tutoring" className="py-12 bg-white">
-      <h2 className="text-3xl font-semibold text-center mb-12">Tutoring Services</h2>
+    <section id="mentoring" className="py-12 bg-white">
+      <h2 className="text-3xl font-semibold text-center mb-12">Mentoring</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
         {tutoringPlans.map((plan, idx) => (
@@ -66,12 +65,13 @@ export default function Tutoring() {
                   <li key={fidx}>{feature}</li>
                 ))}
               </ul>
-              <div className="mt-4 text-lg font-semibold text-green-600">{plan.price}</div>
+              <div className="mt-4 text-lg font-semibold text-green-600">
+                {plan.price}
+              </div>
             </CardContent>
           </Card>
         ))}
       </div>
     </section>
-    
   );
 }

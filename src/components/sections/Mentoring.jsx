@@ -41,8 +41,8 @@ const tutoringPlans = [
 
 export default function Tutoring() {
   return (
-    <section id= "mentoring" className="py-12 bg-white">
-      <h2 className="text-3xl font-semibold text-center mb-12"> Mentoring</h2>
+    <section id="mentoring" className="py-12 bg-white">
+      <h2 className="text-3xl font-semibold text-center mb-12">Mentoring</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
         {tutoringPlans.map((plan, idx) => (
@@ -65,7 +65,9 @@ export default function Tutoring() {
                   <li key={fidx}>{feature}</li>
                 ))}
               </ul>
-              <div className="mt-4 text-lg font-semibold text-green-600">{plan.price}</div>
+              <div className="mt-4 text-lg font-semibold text-green-600">
+                {plan.price}
+              </div>
             </CardContent>
           </Card>
         ))}
