@@ -1,9 +1,5 @@
 "use client";
 
-
-
-// service_n57jk7r : Service ID
-
 import React from "react";
 import {
   Menubar,
@@ -18,25 +14,33 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import meriem from "@/assets/meriem_3.png"; // Profile picture
 
+// service_n57jk7r : Service ID (kept as a comment for your reference)
+
 export default function About() {
-  // === STEP 1: Reliable PDF download handler ===
-  const handleResumeDownload = () => {
+  // === STEP 1: Reliable PDF download handler (async / improved error handling) ===
+  const handleResumeDownload = async () => {
     const fileUrl = "/resume.pdf"; // public/resume.pdf is served from root
     const fileName = "Resume_Meriem.pdf";
 
-    fetch(fileUrl)
-      .then((res) => res.blob()) // convert response to blob
-      .then((blob) => {
-        const url = window.URL.createObjectURL(blob); // create temp URL
-        const a = document.createElement("a"); // create <a> element
-        a.href = url;
-        a.download = fileName;
-        document.body.appendChild(a);
-        a.click(); // trigger download
-        a.remove();
-        window.URL.revokeObjectURL(url); // cleanup
-      })
-      .catch((err) => console.error("Download failed:", err));
+    try {
+      const res = await fetch(fileUrl);
+      if (!res.ok) throw new Error(`HTTP ${res.status} - ${res.statusText}`);
+      const blob = await res.blob();
+
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      // append to DOM so click works in all browsers
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Download failed:", err);
+      // fallback: open in new tab so user can manually save
+      window.open(fileUrl, "_blank", "noopener,noreferrer");
+    }
   };
 
   return (
@@ -58,8 +62,8 @@ export default function About() {
         </MenubarMenu>
 
         <MenubarMenu>
-          <Link to = "/services">
-          <MenubarTrigger>Services</MenubarTrigger>
+          <Link to="/services">
+            <MenubarTrigger>Services</MenubarTrigger>
           </Link>
           <MenubarContent>
             <MenubarItem>Consulting</MenubarItem>
@@ -81,8 +85,6 @@ export default function About() {
       </Menubar>
 
       {/* === Main Content === */}
-
-
       <div className="max-w-6xl mx-auto py-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Text Column */}
         <div className="md:col-span-2 flex flex-col gap-6 text-left">
@@ -91,7 +93,7 @@ export default function About() {
             I love traveling and discovering the beauty of the universe — it’s the same feeling I get when exploring data science. Every journey, whether across the world or through data, reveals new patterns, stories, and connections waiting to be understood.
           </p>
 
-          <h2 className="text-2xl font-bold mt-6"> Education</h2>
+          <h2 className="text-2xl font-bold mt-6">Education</h2>
           <ul className="list-disc list-inside text-gray-700">
             <li>M.S. in Discrete Mathematics and Optimization – USTHB, Algeria</li>
             <li>B.S. in Statistics – USTHB, Algeria</li>
@@ -122,7 +124,7 @@ export default function About() {
             <li>Texera Platform</li>
           </ul>
 
-          <h2 className="text-2xl font-bold mt-6"> Certifications & Training</h2>
+          <h2 className="text-2xl font-bold mt-6">Certifications & Training</h2>
           <ul className="list-disc list-inside text-gray-700">
             <li>Stanford University – Fundamentals of Data Science in Precision Medicine & Cloud Computing</li>
             <li>Cal Poly Pomona – Data Wrangling & Visualization Certificate</li>
@@ -145,17 +147,16 @@ export default function About() {
           </ul>
         </div>
 
-
-
         {/* Profile Picture + Download Button */}
         <div className="flex flex-col justify-between items-center md:items-end">
           <img
             src={meriem}
-            alt="Profile"
+            alt="Meriem profile"
             className="w-48 h-48 rounded-full object-cover mb-6"
           />
+
           {/* === STEP 2: Use onClick handler for reliable download === */}
-          <Button onClick={handleResumeDownload} className="mt-auto">
+          <Button onClick={handleResumeDownload} className="mt-auto" aria-label="Download resume">
             Download Resume
           </Button>
         </div>
@@ -163,4 +164,3 @@ export default function About() {
     </div>
   );
 }
-
