@@ -34,11 +34,16 @@ export default function Home() {
             <MenubarTrigger >Services</MenubarTrigger>
           </Link>
           <MenubarContent>
-            <MenubarItem>Tutoring</MenubarItem>
-            <a href="/services#datascience">
+            <HashLink smooth to="/services#tutoring">
+              <MenubarItem>Tutoring</MenubarItem>
+            </HashLink>
+            <HashLink smooth to="/services#datascience">
             <MenubarItem>Data Science</MenubarItem>
-            </a>
-            <MenubarItem>Mentoring</MenubarItem>
+            </HashLink>
+            <HashLink smooth to="/services#mentoring">
+              <MenubarItem>Mentoring</MenubarItem>
+            </HashLink>
+            
           </MenubarContent>
         </MenubarMenu>
 

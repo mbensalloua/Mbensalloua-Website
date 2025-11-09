@@ -8,9 +8,11 @@ import {
   MenubarShortcut,
 } from "@/components/ui/menubar";
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Tutoring from "../components/sections/Tutoring";
 import Datascience from "../components/sections/Datascience";
 import Mentoring from "../components/sections/Mentoring";
+// import Payments from "../components/sections/Payments";
 
 
 export default function Services() {
@@ -26,29 +28,23 @@ export default function Services() {
 
         {/* Home Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Tutoring</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>Dashboard</MenubarItem>
-            <MenubarItem>Settings</MenubarItem>
-          </MenubarContent>
+          <HashLink smooth to="/services#tutoring">
+            <MenubarTrigger>Tutoring</MenubarTrigger>
+          </HashLink>
         </MenubarMenu>
 
         {/* Portfolio Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Data Science</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>Web Apps</MenubarItem>
-            <MenubarItem>Designs</MenubarItem>
-          </MenubarContent>
+          <HashLink smooth to= "/services#datascience">
+            <MenubarTrigger>Data Science</MenubarTrigger>
+          </HashLink>
         </MenubarMenu>
 
         {/* Services Menu */}
         <MenubarMenu>
-          <MenubarTrigger>Mentoring</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>Consulting</MenubarItem>
-            <MenubarItem>Development</MenubarItem>
-          </MenubarContent>
+          <HashLink smooth to ="/services#mentoring">
+            <MenubarTrigger>Mentoring</MenubarTrigger>
+          </HashLink>
         </MenubarMenu>
 
         {/* About Menu */}
@@ -56,15 +52,7 @@ export default function Services() {
           <Link to ="/about">
           <MenubarTrigger>About</MenubarTrigger>
           </Link>
-          <MenubarContent>
-            <MenubarItem>Bio</MenubarItem>
-            <MenubarItem>Contact</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>
-              Print <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+            </MenubarMenu>
       </Menubar>
 
 
@@ -73,6 +61,7 @@ export default function Services() {
     <Tutoring />
     <Datascience />
     <Mentoring />
+
     </div>
   );
 }

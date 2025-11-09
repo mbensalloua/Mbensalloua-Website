@@ -42,7 +42,7 @@ const tutoringPlans = [
 
 export default function Tutoring() {
   return (
-    <section className="py-12 bg-white">
+    <section id="tutoring" className="py-12 bg-white">
       <h2 className="text-3xl font-semibold text-center mb-12">Tutoring Services</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
@@ -72,5 +72,6 @@ export default function Tutoring() {
         ))}
       </div>
     </section>
+    
   );
 }

@@ -67,17 +67,7 @@ export default function About() {
           </MenubarContent>
         </MenubarMenu>
 
-        <MenubarMenu>
-          <MenubarTrigger>About</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>Bio</MenubarItem>
-            <MenubarItem>Contact</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>
-              Print <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+
       </Menubar>
 
       {/* === Main Content === */}
