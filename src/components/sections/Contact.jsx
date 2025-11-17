@@ -24,7 +24,8 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import emailjs from "emailjs-com"; // ensure installed: npm install emailjs-com
 
-export function SelectDemo({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+// Removed TypeScript annotations for plain JSX
+export function SelectDemo({ value, onChange }) {
   return (
     <div className="grid w-full gap-2">
       <Label htmlFor="service-select">Service Category</Label>
@@ -47,15 +48,15 @@ export function SelectDemo({ value, onChange }: { value: string; onChange: (v: s
 }
 
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement | null>(null);
-  const [service, setService] = useState<string>("");
-  const [isSending, setIsSending] = useState<boolean>(false);
+  const formRef = useRef(null);
+  const [service, setService] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const SERVICE_ID = "service_ao3b1gk";
   const TEMPLATE_ID = "template_wa74tw6";
   const PUBLIC_KEY = "WBjSZrLOlh4V_sck2";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!service) {
@@ -73,13 +74,13 @@ export default function Contact() {
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(
-        (result: any) => {
+        (result) => {
           console.log("✅ Email sent:", result.text);
           alert("Message sent successfully!");
           formRef.current?.reset();
           setService("");
         },
-        (error: any) => {
+        (error) => {
           console.error("❌ Email sending error:", error.text || error);
           alert("Failed to send message, please try again.");
         }
